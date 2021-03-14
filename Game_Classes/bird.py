@@ -1,12 +1,14 @@
 from global_constants import BIRD_IMGS, pygame
 
 class Bird:
+    """Bird Class represeintg The Flappy Bird"""
     IMGS = BIRD_IMGS
     MAX_ROTATION = 25
     ROT_VEL = 20
     ANIMATION_TIME = 5
 
     def __init__(self, x, y):
+        """Initialising Object; params: position x(int) and posiont y(int)"""
         self.x = x
         self.y = y
         self.tilt = 0
@@ -17,11 +19,13 @@ class Bird:
         self.img = self.IMGS[0]
     
     def jump(self):
+        """Jump method for the bird"""
         self.vel = -10.5 # To move up negative velocity is need
         self.tick_count = 0 # Keep track when it last jumped
         self.height = self.y
 
     def move(self):
+        """Move method for the bird"""
         self.tick_count += 1
 
         d = self.vel * self.tick_count + 1.5 * self.tick_count**2 # Number of pixels bird moves up or down
@@ -41,6 +45,7 @@ class Bird:
                 self.tilt -= self.ROT_VEL
     
     def draw(self, window):
+        """Draw method to place the bird on the screen"""
         self.img_count += 1
         
         if self.img_count < self.ANIMATION_TIME:
@@ -65,5 +70,5 @@ class Bird:
         window.blit(pygame.transform.rotate(self.img, self.tilt), (self.x, self.y))
     
     def get_mask(self):
-        """Collision"""
+        """Gets the mask for the current image of the bird ---> Makes collision possible"""
         return pygame.mask.from_surface(self.img)

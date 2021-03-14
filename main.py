@@ -8,18 +8,23 @@ pygame.font.init()
 STAT_FONT = pygame.font.SysFont("comicsans", 50)
 
 def draw_window(window, bird, pipes, base, score):
+    """Draws window for the main loop"""
     window.blit(BG_IMG, (0, 0))
     for pipe in pipes:
         pipe.draw(window)
     
+    # Score
     text = STAT_FONT.render("Score: " + str(score), 1, (255, 255, 255))
     window.blit(text, (WIDTH - 10 - text.get_width(), 10)) # Accomodate the score to thes screen, no matter how big it is
+
     base.draw(window)
     bird.draw(window)
+
     pygame.display.update()
 
 
 def main():
+    """Main Function"""
     my_bird = Bird(230, 350)
     base = Base(730)
     pipes = [Pipe(600)]
