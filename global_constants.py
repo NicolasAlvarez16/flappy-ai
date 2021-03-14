@@ -1,5 +1,8 @@
 import pygame 
 import os
+import random
+import neat
+import time
 
 # pygame.font.init()
 

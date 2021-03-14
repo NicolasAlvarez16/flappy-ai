@@ -1,2 +1,8 @@
 __pycache__/constants.cpython-38.pyc
 .DS_Store
+__pycache__/global_constants.cpython-38.pyc
+
+Game_Classes/__pycache__/bird.cpython-38.pyc
+Game_Classes/__pycache__/base.cpython-38.pyc
+.gitignore
+Game_Classes/__pycache__/pipe.cpython-38.pyc
