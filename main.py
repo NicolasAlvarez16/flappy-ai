@@ -68,7 +68,6 @@ def main(genomes, config):
             if output[0] > 0.5:
                 bird.jump()
         
-        # my_bird.move()
         add_pipe = False
         rem = [] # List of removed pipes
         for pipe in pipes:
